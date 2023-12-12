@@ -14,23 +14,23 @@ class Add
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['add'])]
+    #[Groups(['add','part'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['add'])]
+    #[Groups(['add','part'])]
     private ?string $title = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
-    #[Groups(['add'])]
+    #[Groups(['add','part'])]
     private ?\DateTimeInterface $creation_date = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
-    #[Groups(['add'])]
+    #[Groups(['add','part'])]
     private ?string $description = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['add'])]
+    #[Groups(['add','part'])]
     private ?int $placeNumber = null;
 
     #[ORM\Column(nullable: true)]
@@ -38,11 +38,11 @@ class Add
     private ?bool $activate = null;
 
     #[ORM\ManyToOne]
-    #[Groups(['add'])]
+    #[Groups(['add','part'])]
     private ?Localisation $localisationId = null;
 
     #[ORM\ManyToOne]
-    #[Groups(['add'])]
+    #[Groups(['add','part'])]
     private ?User $userId = null;
 
     public function getId(): ?int

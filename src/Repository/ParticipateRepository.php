@@ -45,4 +45,20 @@ class ParticipateRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+    /**
+     * @return Participate[] Returns an array of Participate objects
+     */
+    public function findCountParticipate($value): array
+    {
+        return $this->createQueryBuilder('p')
+            ->select('COUNT(u.id) AS nbr')
+            ->innerJoin('p.add_id', 'a')
+            ->innerJoin('p.user_id', 'u')
+            ->andWhere('a.id = :val')
+            ->setParameter('val', $value)
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }

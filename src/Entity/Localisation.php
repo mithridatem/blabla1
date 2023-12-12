@@ -12,35 +12,35 @@ class Localisation
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['add'])]
+    #[Groups(['add','part'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['add'])]
+    #[Groups(['add','part'])]
     private ?string $nameLocalisation = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['add'])]
+    #[Groups(['add','part'])]
     private ?string $nameStreet = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['add'])]
+    #[Groups(['add','part'])]
     private ?int $numStreet = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['add'])]
+    #[Groups(['add','part'])]
     private ?string $town = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['add'])]
+    #[Groups(['add','part'])]
     private ?int $postalCode = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['add'])]
+    #[Groups(['add','part'])]
     private ?float $longitude = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups(['add'])]
+    #[Groups(['add','part'])]
     private ?float $latitude = null;
 
     public function getId(): ?int

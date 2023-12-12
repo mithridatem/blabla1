@@ -15,11 +15,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['user','add'])]
+    #[Groups(['user','add','part'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 180, unique: true)]
-    #[Groups(['user','add'])]
+    #[Groups(['user','add','part'])]
     private ?string $email = null;
 
     #[ORM\Column]
@@ -32,11 +32,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $password = null;
 
     #[ORM\Column(length: 50)]
-    #[Groups(['user','add'])]
+    #[Groups(['user','add','part'])]
     private ?string $name = null;
 
     #[ORM\Column(length: 50)]
-    #[Groups(['user','add'])]
+    #[Groups(['user','add','part'])]
     private ?string $firstname = null;
 
     #[ORM\Column]
@@ -47,6 +47,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $token = null;
 
     #[ORM\Column(length: 250, nullable: true)]
+    #[Groups(['part'])]
     private ?string $imgUsers = null;
 
     public function getId(): ?int
