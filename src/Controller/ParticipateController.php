@@ -94,4 +94,22 @@ class ParticipateController extends AbstractController
             'Access-Control-Allow-Origin' => '*'
         ],$groupe);
     }
+    #[Route('/participate/all/{id}', name: 'app_participate_all')]
+    public function getAllMessage($id){
+        $message = "";
+        $code = 200;
+        $groupe = [];
+        $messages = $this->repo->findBy(["addId"=>$id]);
+        if($messages){
+            $message = $messages;
+            $groupe = ['groups' => 'mess'];
+        }else{
+            $message = ["error"=>"aucun message"];
+            $code = 400;
+        }
+        return $this->json($message, $code, [
+            'Content-Type' => 'application/json',
+            'Access-Control-Allow-Origin' => '*'
+        ],$groupe);
+    }
 }

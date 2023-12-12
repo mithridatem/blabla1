@@ -32,11 +32,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $password = null;
 
     #[ORM\Column(length: 50)]
-    #[Groups(['user','add','part'])]
+    #[Groups(['user','add','part','mess'])]
     private ?string $name = null;
 
     #[ORM\Column(length: 50)]
-    #[Groups(['user','add','part'])]
+    #[Groups(['user','add','part','mess'])]
     private ?string $firstname = null;
 
     #[ORM\Column]
@@ -47,7 +47,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $token = null;
 
     #[ORM\Column(length: 250, nullable: true)]
-    #[Groups(['part'])]
+    #[Groups(['part','mess'])]
     private ?string $imgUsers = null;
 
     public function getId(): ?int

@@ -18,7 +18,7 @@ class Add
     private ?int $id = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['add','part'])]
+    #[Groups(['add','part','mess'])]
     private ?string $title = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]

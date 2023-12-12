@@ -12,15 +12,15 @@ class Participate
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['part'])]
+    #[Groups(['part', 'mess'])]
     private ?int $id = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
-    #[Groups(['part'])]
+    #[Groups(['part','mess'])]
     private ?\DateTimeInterface $rdvDate = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
-    #[Groups(['part'])]
+    #[Groups(['part','mess'])]
     private ?string $message = null;
 
     #[ORM\Column(nullable: true)]
@@ -28,11 +28,11 @@ class Participate
     private ?bool $confirm = null;
 
     #[ORM\ManyToOne]
-    #[Groups(['part'])]
+    #[Groups(['part','mess'])]
     private ?Add $addId = null;
 
     #[ORM\ManyToOne]
-    #[Groups(['part'])]
+    #[Groups(['part','mess'])]
     private ?User $userId = null;
 
     public function getId(): ?int
